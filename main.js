@@ -11,7 +11,7 @@ window.addEventListener('load', async function() {
 })
 
 function searchCurrentWeather() {
-    const searchTerm = document.getElementById("search-input").nodeValue;
+    const searchTerm = document.getElementById("search-input").value;
     getCurrentWeather(searchTerm);
 }
 
