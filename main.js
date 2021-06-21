@@ -23,12 +23,12 @@ async function displayResult(result) {
     currentView.children[1].innerHTML = "As of " + result.current.last_updated;
     currentView.children[2].children[0].children[0].innerHTML = result.current.temp_c +'&deg;C';
     currentView.children[2].children[0].children[1].innerHTML = result.current.condition.text;
-    findIcon(result.current.condition.code).then(data => currentView.children[2].children[1].src = data.icon);
+    Promise.resolve(findIcon(result.current.condition.code).then(data => currentView.children[2].children[1].src = data.icon));
 
 }
 
 async function findIcon(code) {
-    await fetch("./assets/weather_conditions.json")
+   return fetch("./assets/weather_conditions.json")
     .then(response => response.json())
     .then(json => { 
         console.log(json);
