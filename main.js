@@ -22,7 +22,7 @@ function displayResult(result) {
     currentView.children[1].innerHTML = "As of " + result.current.last_updated;
     currentView.children[2].children[0].children[0].innerHTML = result.current.temp_c +'&deg;C';
     currentView.children[2].children[0].children[1].innerHTML = result.current.condition.text;
-    currentView.children[2].children[1].src = findIcon(result.current.condition.code).icon;
+    currentView.children[2].children[1].src = await findIcon(result.current.condition.code).icon;
 
 }
 
