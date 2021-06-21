@@ -28,8 +28,7 @@ function displayResult(result) {
 
 async function findIcon(code) {
     await fetch("./assets/weather_conditions.json")
-    .then(response => {
-       return response.json();
-    })
+    .then(response => response.json())
+    .then(json => console.log(json))
     .then(data => data.find(x => x["code"] === code ));
 }
