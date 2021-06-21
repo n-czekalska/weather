@@ -16,7 +16,7 @@ async function getCurrentWeather(location = "Edinburgh") {
         return await response.json();
 }
 
-function displayResult(result) {
+async function displayResult(result) {
     let currentView = document.querySelector(".current > .card");
     currentView.children[0].innerHTML = result.location.name +", " + result.location.country;
     currentView.children[1].innerHTML = "As of " + result.current.last_updated;
