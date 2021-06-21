@@ -11,7 +11,7 @@ window.addEventListener('load', async function() {
 })
 
 async function getCurrentWeather(location) {
-        const response = await fetch(basicURI + current + "?key="+ apiKey + "&q=" + location ? location : "Edinburgh")
+        const response = await fetch(basicURI + current + "?key="+ apiKey + "&q=" + (location ? location : "Edinburgh"))
         .catch(err => {
             console.error(err);
             const errorMessage = document.getElementById(error);
