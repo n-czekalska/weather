@@ -10,10 +10,13 @@ window.addEventListener('load', async function() {
     displayResult(result);
 })
 
-
 async function getCurrentWeather(location = "Edinburgh") {
         const response = await fetch(basicURI + current + "?key="+ apiKey + "&q=" + location)
-        .catch(err => console.error(err));
+        .catch(err => {
+            console.error(err);
+            const errorMessage = document.getElementById(error);
+            errorMessage.innerHTML = "City not found";
+        });
         return await response.json();
 }
 

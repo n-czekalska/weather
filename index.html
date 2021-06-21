@@ -15,11 +15,12 @@
 <body>
     <header aria-label="menu" role="banner">
         <div class="row searchbar darkblue">
+            <p id="error"></p>
             <div class="col-md-3 col-sm-12">
                 <input type="search" class="form-control search-input" id="search-input" placeholder="Search city"
                     aria-label="Search city" autocomplete="off" data-bd-docs-version="5.0" spellcheck="false"
                     role="combobox" aria-autocomplete="list" aria-expanded="false"
-                    aria-owns="algolia-autocomplete-listbox-0" dir="auto"></div>
+                    aria-owns="algolia-autocomplete-listbox-0" dir="auto" onsubmit="getCurrentWeather(value)"></div>
         </div>
     </header>
     <div class="nav justify-content-evenly blue">
