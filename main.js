@@ -10,7 +10,7 @@ window.addEventListener('load', async function() {
     displayResult(result);
 })
 
-function searchCurrentWeather() {
+async function searchCurrentWeather() {
     const searchTerm = document.getElementById("search-input").value;
     const result = await getCurrentWeather(searchTerm);
     console.log(result);
