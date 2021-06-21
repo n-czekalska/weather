@@ -87,7 +87,8 @@ a:before {
     margin: 10px;
     padding: 20px 30px;
     border-radius: 7px;
-    background-color: var(--white);
+    color: var(--white);
+    background-color: var(--bluegray);
 }
 
 .card>div>div>h2 {
