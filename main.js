@@ -10,6 +10,11 @@ window.addEventListener('load', async function() {
     displayResult(result);
 })
 
+function searchCurrentWeather() {
+    const searchTerm = document.getElementById("search-input").nodeValue;
+    getCurrentWeather(searchTerm);
+}
+
 async function getCurrentWeather(location) {
         const response = await fetch(basicURI + current + "?key="+ apiKey + "&q=" + (location ? location : "Edinburgh"))
         .catch(err => {
