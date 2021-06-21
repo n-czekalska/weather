@@ -26,9 +26,9 @@ function displayResult(result) {
 
 }
 
-function findIcon(code) {
-    const weatherjson = {};
-     fetch("./assets/weather_conditions.json")
+async function findIcon(code) {
+    let weatherjson = {};
+    await fetch("./assets/weather_conditions.json")
     .then(response => {
        weatherjson =  response.json();
     });
