@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="57mm"
+   height="40mm"
+   viewBox="0 0 57 40"
+   version="1.1"
+   id="svg559"
+   inkscape:version="1.1 (c68e22c387, 2021-05-23)"
+   sodipodi:docname="moon.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview561"
+     pagecolor="#505050"
+     bordercolor="#ffffff"
+     borderopacity="1"
+     inkscape:pageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="1"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:zoom="1.5554293"
+     inkscape:cx="153.33387"
+     inkscape:cy="82.292394"
+     inkscape:window-width="1718"
+     inkscape:window-height="1368"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="layer1"
+     units="mm" />
+  <defs
+     id="defs556" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <path
+       id="path182"
+       style="fill:#b89157;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.0815728"
+       d="m 11.504961,31.384758 c 0.190879,0.212084 0.382576,0.427439 0.58243,0.633819 0.369524,0.385023 0.754547,0.756179 1.154253,1.102864 2.972512,2.612774 6.802353,4.269518 11.018847,4.520761 0.362998,0.03017 0.732521,0.03834 1.102863,0.03834 10.159881,0 18.397911,-8.241292 18.397911,-18.404441 0,-8.242925 -5.421323,-15.218207 -12.898279,-17.5626088 0.399709,0.4592541 0.777389,0.9315596 1.124889,1.4299717 l 0.0081,0.00741 c 0.199043,0.2708209 0.391548,0.5620355 0.569376,0.8491694 1.803572,2.8395485 2.847703,6.2044217 2.847703,9.8205417 0,10.161514 -8.246185,18.399545 -18.407701,18.399545 -0.37034,0 -0.746388,-0.01642 -1.11102,-0.03672 -1.521333,-0.08974 -2.99372,-0.362998 -4.389431,-0.798596" />
+  </g>
+</svg>
