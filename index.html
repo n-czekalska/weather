@@ -19,8 +19,10 @@
             <div class="col-md-3 col-sm-12">
                 <input type="text" class="form-control search-input" id="search-input" placeholder="Search city"
                     aria-label="Search city" autocomplete="off" data-bd-docs-version="5.0" spellcheck="false"
-                    role="combobox" aria-autocomplete="list" aria-expanded="false" name="q"
-                    aria-owns="algolia-autocomplete-listbox-0" dir="auto" onsubmit="getCurrentWeather(value)"></div>
+                    role="combobox" aria-autocomplete="list" aria-expanded="false" name="q" value=""
+                    aria-owns="algolia-autocomplete-listbox-0" dir="auto" onsubmit="getCurrentWeather(value)">
+                <button type="submit">Search</button> 
+            </div>
         </div>
     </header>
     <ul class="nav justify-content-evenly blue">
