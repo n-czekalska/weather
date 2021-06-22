@@ -99,7 +99,7 @@ a:before {
     background-color: var(--bluegray);
 }
 
-.card>div>div>h2 {
+.card>div>h2 {
     font-size: 4rem;
 }
 
