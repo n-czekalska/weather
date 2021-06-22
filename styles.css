@@ -8,6 +8,7 @@
     --offwhite: #E8EEF1;
     --white: #FFFFFF;
     --black: #000000;
+    --red: #ff0000;
 }
 
 body {
@@ -25,6 +26,10 @@ body {
 
 .lightblue {
     background-color: var(--bluegray)
+}
+
+.error {
+    color: --red;
 }
 
 .searchbar {

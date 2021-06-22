@@ -1,5 +1,5 @@
 
-import * as moment from "moment";
+const moment = require("moment");
 const apiKey = "76f78e8f22cb4efa84f125231212006";
 const basicURI = "https://api.weatherapi.com/v1/";
 const current = "current.json";
@@ -22,8 +22,8 @@ async function getCurrentWeather(location) {
         const response = await fetch(basicURI + current + "?key="+ apiKey + "&q=" + (location ? location : "Edinburgh"))
         .catch(err => {
             console.error(err);
-            const errorMessage = document.getElementById("error");
-            errorMessage.innerHTML = "City not found";
+            const searchInput = document.getElementById("search-input");
+            searchInput.insertAdjacentHTML("beforebegin", " <p id='error'>City not found</p>");
         });
         return await response.json();
 }
