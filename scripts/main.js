@@ -22,8 +22,8 @@ async function searchCurrentWeather() {
     displayResult(result);
 }
 
-async function getCurrentWeather(location) {
-        const response = await fetch(basicURI + current + "?key="+ apiKey + "&q=" + (location ? location : "Edinburgh"))
+async function getCurrentWeather(searchLocation) {
+        const response = await fetch(basicURI + current + "?key="+ apiKey + "&q=" + (searchLocation ? searchLocation : "Edinburgh"))
         .catch(err => {
             console.error(err);
             const searchInput = document.getElementById("search-input");
