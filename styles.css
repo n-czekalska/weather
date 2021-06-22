@@ -107,8 +107,6 @@ a:before {
     color: var(--black);
 }
 
-
-
 @media (max-width: 575.98px) { 
     .current > .card {
         text-align: center;
