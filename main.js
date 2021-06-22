@@ -21,7 +21,7 @@ async function getCurrentWeather(location) {
         const response = await fetch(basicURI + current + "?key="+ apiKey + "&q=" + (location ? location : "Edinburgh"))
         .catch(err => {
             console.error(err);
-            const errorMessage = document.getElementById(error);
+            const errorMessage = document.getElementById("error");
             errorMessage.innerHTML = "City not found";
         });
         return await response.json();
