@@ -1,5 +1,4 @@
-
-const moment = require("moment");
+import moment from "./moment";
 const apiKey = "76f78e8f22cb4efa84f125231212006";
 const basicURI = "https://api.weatherapi.com/v1/";
 const current = "current.json";
