@@ -6,6 +6,9 @@ const date = document.getElementById("dateTime");
 const temp = document.getElementById("temp");
 const condition = document.getElementById("condition");
 const icon = document.getElementById("weathericon");
+const today = document.getElementById("today");
+const fiveDay = document.getElementById("fiveday");
+const tenDay = document.getElementById("tenday");
 
 window.addEventListener('load', async function() {
     const result = await getCurrentWeather();
@@ -13,17 +16,34 @@ window.addEventListener('load', async function() {
     displayResult(result);
 })
 
+function displayToday() {
+    fiveDay.style.display = "none";
+    tenDay.style.display = "none";
+    today.style.display = "block";
+}
+
+function displayFiveDay() {
+    today.style.display = "none";
+    tenDay.style.display = "none";
+    fiveDay.style.display = "block";
+}
+
+function displayTenDay() {
+    today.style.display = "none";
+    fiveDay.style.display = "none";
+    tenDay.style.display = "block";
+}
+
 async function searchCurrentWeather() {
     const searchTerm = document.getElementById("search-input").value;
     const result = await getCurrentWeather(searchTerm);
-    console.log(result);
-    displayResult(result);
+    result.error ?  document.getElementById("searchbar").insertAdjacentHTML("beforebegin", "<p class='error darkblue'>"+result.error.message+"</p>") :  displayResult(result);
 }
 
 async function getCurrentWeather(searchLocation) {
         const response = await fetch(basicURI + current + "?key="+ apiKey + "&q=" + (searchLocation ? searchLocation : "Edinburgh"))
-        .catch(err => {
-            console.error(err);
+        .catch(error => {
+            console.error(error);
             const searchInput = document.getElementById("search-input");
             searchInput.insertAdjacentHTML("beforebegin", " <p id='error'>City not found</p>");
         });

@@ -29,7 +29,9 @@ body {
 }
 
 .error {
-    color: --red;
+    text-align: center;
+    color: var(--red);
+    margin: 0;
 }
 
 .searchbar {
@@ -103,7 +105,7 @@ h1 {
 }
 
 h2 {
-    font-size: 4rem;
+    font-size: 5rem;
 }
 
 #weathericon {
@@ -123,7 +125,7 @@ h2 {
 
 
 @media (min-width: 575.98px) { 
-    #mainInfo {
+    #tempInfo {
         display: flex;
         justify-content: space-between;
     }
