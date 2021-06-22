@@ -1,4 +1,3 @@
-import formatMoment from "./moment.js";
 const apiKey = "76f78e8f22cb4efa84f125231212006";
 const basicURI = "https://api.weatherapi.com/v1/";
 const current = "current.json";
@@ -33,7 +32,7 @@ async function getCurrentWeather(searchLocation) {
 
 async function displayResult(result) {
     location.innerHTML = result.location.name +", " + result.location.country;
-    date = "As of " + formatMoment(result.current.last_updated, "DD-MMMM-YYYY HH:mm");
+    date = "As of " + moment(result.current.last_updated).format("DD-MMMM-YYYY HH:mm");
     temp.innerHTML = result.current.temp_c +'&deg;C';
     condition.innerHTML = result.current.condition.text;
     Promise.resolve(findIcon(result.current.condition.code).then(data => icon.src = "assets/"+ data.icon));
