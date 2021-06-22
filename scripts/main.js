@@ -1,7 +1,7 @@
 const apiKey = "76f78e8f22cb4efa84f125231212006";
 const basicURI = "https://api.weatherapi.com/v1/";
 const current = "current.json";
-const location = document.getElementById("location");
+const loc = document.getElementById("location");
 const date = document.getElementById("dateTime");
 const temp = document.getElementById("temp");
 const condition = document.getElementById("condition");
@@ -31,7 +31,7 @@ async function getCurrentWeather(searchLocation) {
 }
 
 async function displayResult(result) {
-    location.innerHTML = result.location.name +", " + result.location.country;
+    loc.innerHTML = result.location.name +", " + result.location.country;
     date.innerHTML = "Last updated " + moment(result.current.last_updated).format("DD MMMM YYYY HH:mm");
     temp.innerHTML = result.current.temp_c +'&deg;C';
     condition.innerHTML = result.current.condition.text;
