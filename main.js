@@ -3,7 +3,11 @@ const moment = require("moment");
 const apiKey = "76f78e8f22cb4efa84f125231212006";
 const basicURI = "https://api.weatherapi.com/v1/";
 const current = "current.json";
-
+const location = document.getElementById("location");
+const date = document.getElementById("dateTime");
+const temp = document.getElementById("temp");
+const condition = document.getElementById("condition");
+const icon = document.getElementById("weathericon");
 
 window.addEventListener('load', async function() {
     const result = await getCurrentWeather();
@@ -29,12 +33,11 @@ async function getCurrentWeather(location) {
 }
 
 async function displayResult(result) {
-    let currentView = document.querySelector(".current > .card");
-    currentView.children[0].innerHTML = result.location.name +", " + result.location.country;
-    currentView.children[1].innerHTML = "As of " + moment(result.current.last_updated).format('YYYY-MM-DD HH:m:s');
-    currentView.children[2].children[0].children[0].innerHTML = result.current.temp_c +'&deg;C';
-    currentView.children[2].children[0].children[1].innerHTML = result.current.condition.text;
-    Promise.resolve(findIcon(result.current.condition.code).then(data => currentView.children[2].children[1].src = "assets/"+ data.icon));
+    location.innerHTML = result.location.name +", " + result.location.country;
+    date = "As of " + moment(result.current.last_updated).format("DD-MMMM-YYYY HH:mm");
+    temp.innerHTML = result.current.temp_c +'&deg;C';
+    condition.innerHTML = result.current.condition.text;
+    Promise.resolve(findIcon(result.current.condition.code).then(data => icon.src = "assets/"+ data.icon));
 
 }
 
