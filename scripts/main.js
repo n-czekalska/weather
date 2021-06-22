@@ -32,7 +32,7 @@ async function getCurrentWeather(searchLocation) {
 
 async function displayResult(result) {
     location.innerHTML = result.location.name +", " + result.location.country;
-    date.innerHTML = "As of " + moment(result.current.last_updated).format("DD-MMMM-YYYY HH:mm");
+    date.innerHTML = "As of " + moment(result.current.last_updated).format("DD MMMM YYYY HH:mm");
     temp.innerHTML = result.current.temp_c +'&deg;C';
     condition.innerHTML = result.current.condition.text;
     Promise.resolve(findIcon(result.current.condition.code).then(data => icon.src = "assets/"+ data.icon));
