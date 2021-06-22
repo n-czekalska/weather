@@ -98,8 +98,11 @@ a:before {
     color: var(--white);
     background-color: var(--bluegray);
 }
+h1 {
+    font-size: 1.5rem;
+}
 
-.card>div>h2 {
+h2 {
     font-size: 4rem;
 }
 
