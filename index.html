@@ -21,21 +21,24 @@
                     role="combobox" aria-autocomplete="list" aria-expanded="false" name="q" value=""
                     aria-owns="algolia-autocomplete-listbox-0" dir="auto"></div>
             <div class="col-md-1 col-sm-12">
-                <button type="submit" class="btn btn-outline-light w-100" onclick="searchCurrentWeather()">Search</button>
+                <button type="submit" class="btn btn-outline-light w-100"
+                    onclick="searchCurrentWeather()">Search</button>
             </div>
         </div>
     </header>
-    <ul class="nav justify-content-evenly blue">
-        <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="#today" onclick="displayToday()">Today</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#fiveday" onclick="displayFiveDay()">5 day</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#tenday" onclick="displayTenDay()">10 day</a>
-        </li>
-    </ul>
+    <div class="row">
+        <ul class="nav justify-content-evenly blue">
+            <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="#today" onclick="displayToday()">Today</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#fiveday" onclick="displayFiveDay()">5 day</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#tenday" onclick="displayTenDay()">10 day</a>
+            </li>
+        </ul>
+    </div>
     <main id="mainContent">
         <div class="row">
             <div id="today" class="container col-md-6 col-sm-12 ">

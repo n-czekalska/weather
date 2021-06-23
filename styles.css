@@ -56,7 +56,6 @@ h5, .h5 {
 
 .searchbar {
     height: 100px;
-    display: grid;
     place-items: center;
 }
 
