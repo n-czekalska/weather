@@ -63,23 +63,41 @@
                                 <p class="h3" id="feelsLike"></p>
                             </div>
                             <div class="minMax">
-                                <img class="detailsIcon" id="tempMin" src="assets//icons/thermometer.svg"
+                                <img class="detailsIcon" id="tempMin" src="assets/icons/thermometer.svg"
                                     alt="theremometer icon"><span class="h4" id="min"></span>
                                 <span class="h4">/</span>
-                                <img class="detailsIcon" id="tempMax" src="assets//icons/thermometerHot.svg"
+                                <img class="detailsIcon" id="tempMax" src="assets/icons/thermometerHot.svg"
                                     alt="theremometer icon"><span class="h4" id="max"></span>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-md-6 col-sm-12" id="detailsList2">
-                                <p class="listItem">Wind: <span id="wind"></span></p>
-                                <p class="listItem">UV Index: <span id="uv"></span></p>
-                                <p class="listItem">Pressure: <span id="pressure"></span></p>
+                                <div class="listItem">
+                                     <p class="mb-0"><img class="detailsIcon" id="windIcon" src="assets/icons/breeze.svg" alt="wind icon">Wind:</p>
+                                     <span id="wind"></span>
+                                </div>
+                                <div class="listItem">
+                                    <p class="mb-0"><img class="detailsIcon" id="uvIcon" src="assets/icons/uv.svg" alt="sun icon">UV Index: </p>
+                                    <span id="uv"></span>
+                               </div>
+                                <div class="listItem">
+                                    <p class="mb-0"><img class="detailsIcon" id="pressureIcon" src="assets/icons/pressure.svg" alt="pressure icon">Pressure:</p> 
+                                    <span id="pressure"></span>
+                                </div>
                             </div>
                             <div class="col-md-6 col-sm-12" id="detailsList">
-                                <p class="listItem">Sunrise/set: <span id="sunTimes"></span></p>
-                                <p class="listItem">Moon phase: <span id="moonPhase"></span></p>
-                                <p class="listItem">Humidity: <span id="humidity"></span></p>
+                                <div class="listItem">
+                                    <p class="mb-0"><img class="detailsIcon" id="sunMoonIcon" src="assets/icons/dayNight.svg" alt="sun and moon icon">Sunrise/set:</p>
+                                    <span id="sunTimes"></span>
+                               </div>
+                               <div class="listItem">
+                                   <p class="mb-0"><img class="detailsIcon" id="moonPhaseIcon" src="assets/icons/moonPhase.svg" alt="moon phase icon">Moon phase: </p>
+                                   <span id="moonPhase"></span>
+                              </div>
+                               <div class="listItem">
+                                   <p class="mb-0"><img class="detailsIcon" id="raindropIcon" src="assets/icons/raindrop.svg" alt="water drop icon">Humidity: </p>
+                                   <span id="humidity"></span>
+                               </div>
                             </div>
                     </section>
                 </div>

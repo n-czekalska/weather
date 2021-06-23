@@ -135,6 +135,7 @@ a:before {
 
 .detailsIcon {
     width: 24px;
+    margin-right: 5px;
     height: auto;
     vertical-align: text-bottom;
 }
