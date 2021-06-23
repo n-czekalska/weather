@@ -41,9 +41,9 @@
             <div id="today" class="container col-md-6 col-sm-12 ">
                 <div class="current">
                     <section class="card">
-                        <h1 id="location"></h1>
+                        <h1 class="location"></h1>
                         <p id="dateTime"></p>
-                        <div id="tempInfo">
+                        <div class="tempInfo">
                             <h2 id="temp"></h2>
                             <img id="weathericon" src="" alt="Weather icon">
                         </div>
@@ -52,7 +52,26 @@
                 </div>
                 <div class="details">
                     <section class="card">
-
+                        <p class="h1">Weather today in <span class="location"></span></p>
+                        <div class="tempInfo mb-4">
+                            <div>
+                                <p class="mb-0">Feels like:</p>
+                                <p class="h3" id="feelsLike"></p>
+                            </div>
+                            <div class="minMax">
+                                <img class="detailsIcon" id="tempMin" src="assets//icons/thermometer.svg"
+                                    alt="theremometer icon"><span class="h4" id="min"></span>
+                                <span class="h4">/</span>
+                                <img class="detailsIcon" id="tempMax" src="assets//icons/thermometerHot.svg"
+                                    alt="theremometer icon"><span class="h4" id="max"></span>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-12" id="detailsList">
+                            <p class="listItem">Wind: <span id="wind"></span></p>
+                            <p class="listItem">UV Index: <span id="uv"></span></p>
+                            <p class="listItem">Humidity: <span id="humidity"></span></p>
+                            <p class="listItem">Pressure: <span id="pressure"></span></p>
+                        </div>
                     </section>
                 </div>
             </div>
@@ -60,7 +79,7 @@
 
             </div>
             <div id="tenday">
-                
+
             </div>
         </div>
 
