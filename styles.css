@@ -53,13 +53,13 @@ h5, .h5 {
     color: var(--red);
     margin: 0;
 }
-
+/* searchbar top */
 .searchbar {
     height: 100px;
     place-items: center;
 }
 
-/* searchbar top */
+
 .search-input {
     border: 0;
     border-radius: .25rem;
@@ -117,7 +117,7 @@ a:before {
 
 .current > .card {
     color: var(--white);
-    background-color: var(--bluegray);
+    background-color: var(--darkblue);
 }
 
 #weathericon {
