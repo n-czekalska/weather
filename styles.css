@@ -63,7 +63,7 @@ h5, .h5 {
 /* searchbar top */
 .search-input {
     border: 0;
-    border-radius: 10px;
+    border-radius: .25rem;
     text-align: center;
 }
 
@@ -113,7 +113,7 @@ a:before {
 .card {
     margin: 20px 10px;
     padding: 20px 30px;
-    border-radius: 7px;
+    border-radius: .25rem;
 }
 
 .current > .card {

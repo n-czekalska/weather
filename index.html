@@ -21,7 +21,7 @@
                     role="combobox" aria-autocomplete="list" aria-expanded="false" name="q" value=""
                     aria-owns="algolia-autocomplete-listbox-0" dir="auto"></div>
             <div class="col-md-1 col-sm-12">
-                <button type="submit" class="btn btn-outline-light" onclick="searchCurrentWeather()">Search</button>
+                <button type="submit" class="btn btn-outline-light w-100" onclick="searchCurrentWeather()">Search</button>
             </div>
         </div>
     </header>
@@ -66,11 +66,19 @@
                                     alt="theremometer icon"><span class="h4" id="max"></span>
                             </div>
                         </div>
-                        <div class="col-md-6 col-sm-12" id="detailsList">
-                            <p class="listItem">Wind: <span id="wind"></span></p>
-                            <p class="listItem">UV Index: <span id="uv"></span></p>
-                            <p class="listItem">Humidity: <span id="humidity"></span></p>
-                            <p class="listItem">Pressure: <span id="pressure"></span></p>
+                        <div class="row">
+                            <div class="col-md-6 col-sm-12" id="detailsList">
+                                <p class="listItem">Wind: <span id="wind"></span></p>
+                                <p class="listItem">UV Index: <span id="uv"></span></p>
+                                <p class="listItem">Humidity: <span id="humidity"></span></p>
+                                <p class="listItem">Pressure: <span id="pressure"></span></p>
+                            </div>
+                            <div class="col-md-6 col-sm-12" id="detailsList2">
+                                <p class="listItem">Wind:</p>
+                                <p class="listItem">UV Index: </p>
+                                <p class="listItem">Humidity: </span></p>
+                                <p class="listItem">Pressure: </span></p>
+                            </div>
                         </div>
                     </section>
                 </div>
