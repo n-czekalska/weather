@@ -1,7 +1,7 @@
 const apiKey = "76f78e8f22cb4efa84f125231212006";
 const basicURI = "https://api.weatherapi.com/v1/";
 const forecast = "forecast.json";
-let loc, date, temp, condition, icon, feelsLike, min, max, wind, humidity, uv, pressure, today, fiveDay, tenDay;
+let loc, date, temp, condition, icon, feelsLike, chanceOfRainSnow, min, max, wind, humidity, uv, pressure, sunTimes, moonPhase, today, fiveDay, tenDay;
 
 window.addEventListener('load', async function() {
     getDocumentElements()
@@ -52,16 +52,21 @@ async function displayResult(result) {
         loc[i].innerHTML = result.location.name +", " + result.location.country;
       }
     
-    date.innerHTML = "Last updated " + moment(current.last_updated).format("HH:mm");
+    date.innerHTML = "Last updated " + moment(current.last_updated).format("h:mm A");
     temp.innerHTML = current.temp_c +'&deg;C';
     condition.innerHTML = current.condition.text;
     Promise.resolve(findIcon(current.condition.code).then(data => icon.src = "assets/"+ data.icon));
 
     feelsLike.innerHTML = current.feelslike_c +'&deg;C';
     
+    forecastInfo.day.daily_chance_of_rain > 0 ? chanceOfRainSnow.innerHTML = forecastInfo.day.daily_chance_of_rain +"% chance of rain" :  
+    forecastInfo.day.daily_chance_of_snow > 0 ? chanceOfRainSnow.innerHTML = forecastInfo.day.daily_chance_of_snow +"% chance of snow" :  chanceOfRainSnow.display = "none";
+ 
+    sunTimes.innerHTML = forecastInfo.astro.sunrise + " / " + forecastInfo.astro.sunset;
+    moonPhase.innerHTML = forecastInfo.astro.moon_phase;
     min.innerHTML = forecastInfo.day.mintemp_c +'&deg;C';
     max.innerHTML =  forecastInfo.day.maxtemp_c+'&deg;C';
-    wind.innerHTML = current.wind_kph + " kph /" + current.wind_mph + " mph";
+    wind.innerHTML = current.wind_kph + " kph / " + current.wind_mph + " mph";
     pressure.innerHTML = current.pressure_mb + " mb" ;
     uv.innerHTML = current.uv + " of 10";
     humidity.innerHTML = current.humidity + " %";
@@ -72,7 +77,6 @@ async function findIcon(code) {
    return fetch("./assets/weather_conditions.json")
     .then(response => response.json())
     .then(json => { 
-        console.log(json);
         return json.find(x => x["code"] === code)
      });
 }
@@ -84,13 +88,16 @@ function getDocumentElements() {
  condition = document.getElementById("condition");
  icon = document.getElementById("weathericon");
  feelsLike = document.getElementById("feelsLike");
+ chanceOfRainSnow = document.getElementById("chanceOfRainSnow");
+
  min= document.getElementById("min");
  max = document.getElementById("max");
-
- wind =  document.getElementById("wind"); 
- humidity =  document.getElementById("humidity");
- uv =  document.getElementById("uv");
- pressure =  document.getElementById("pressure");
+ sunTimes = document.getElementById("sunTimes"); 
+ moonPhase = document.getElementById("moonPhase");
+ wind = document.getElementById("wind"); 
+ humidity = document.getElementById("humidity");
+ uv = document.getElementById("uv");
+ pressure = document.getElementById("pressure");
 
  today = document.getElementById("today");
  fiveDay = document.getElementById("fiveday");
