@@ -47,23 +47,28 @@ async function getCurrentWeather(searchLocation) {
 
 async function displayResult(result) {
     const current = result.current;
-    const forecastInfo = result.forecast.forecastday[0];
-    qualityIndex = getQualityIndexData();
-
+    const forecastInfo = result.forecast.forecastday[0]
+    
     for (i = 0; i < loc.length; i++) {
         loc[i].innerHTML = result.location.name + ", " + result.location.country;
-    }
+    };
 
+    displayMainCard(current, forecastInfo);
+    displayDetailsCard(current, forecastInfo);
+    displayAirQualityCard(current);
+}
+
+function displayMainCard(current, forecastInfo) {
     date.innerHTML = "Last updated " + moment(current.last_updated).format("h:mm A");
     temp.innerHTML = current.temp_c + '&deg;C';
     condition.innerHTML = current.condition.text;
     Promise.resolve(findIcon(current.condition.code).then(data => icon.src = "assets/" + ( current.is_day ? data.day : data.night)));
 
-    feelsLike.innerHTML = current.feelslike_c + '&deg;C';
-
     forecastInfo.day.daily_chance_of_rain > 0 ? chanceOfRainSnow.innerHTML = forecastInfo.day.daily_chance_of_rain + "% chance of rain" :
         forecastInfo.day.daily_chance_of_snow > 0 ? chanceOfRainSnow.innerHTML = forecastInfo.day.daily_chance_of_snow + "% chance of snow" : chanceOfRainSnow.display = "none";
-
+}
+function displayDetailsCard(current, forecastInfo) {
+    feelsLike.innerHTML = current.feelslike_c + '&deg;C';
     sunTimes.innerHTML = forecastInfo.astro.sunrise + " / " + forecastInfo.astro.sunset;
     moonPhase.innerHTML = forecastInfo.astro.moon_phase;
     min.innerHTML = forecastInfo.day.mintemp_c + '&deg;C';
@@ -73,6 +78,9 @@ async function displayResult(result) {
     uv.innerHTML = current.uv + " of 10";
     humidity.innerHTML = current.humidity + " %";
 
+}
+function displayAirQualityCard(current, forecastInfo) {
+    qualityIndex = getQualityIndexData();
     index.innerHTML = current.air_quality["gb-defra-index"];
 
     const qualityValue = qualityIndex.find(x => x.index === current.air_quality["gb-defra-index"].toString())
@@ -83,7 +91,6 @@ async function displayResult(result) {
     const stroke = qualityValue.index *10;
     donutSegment.style.strokeDasharray = stroke.toString() + " " + (100 - stroke).toString();
     message.innerHTML = qualityValue.message;
-
 }
 
 async function findIcon(code) {
