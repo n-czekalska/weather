@@ -2,7 +2,8 @@ const apiKey = "76f78e8f22cb4efa84f125231212006";
 const basicURI = "https://api.weatherapi.com/v1/";
 const forecast = "forecast.json";
 const otherParameters = "&days=1&aqi=yes&alerts=no";
-let loc, date, temp, condition, icon, feelsLike, chanceOfRainSnow, min, max, wind, humidity, uv, pressure, sunTimes, moonPhase, today, hourly, tenDay, qualityIndex, index, indexBanding, donutSegment, message;
+let loc, date, temp, condition, icon, feelsLike, chanceOfRainSnow, min, max, wind, humidity, uv, pressure, sunTimes, moonPhase, 
+today, hourly, tenDay, qualityIndex, index, indexBanding, indexDescription, donutSegment, message;
 
 window.addEventListener('load', async function () {
     getDocumentElements()
@@ -76,7 +77,7 @@ async function displayResult(result) {
     index.innerHTML = current.air_quality["gb-defra-index"];
 
     const qualityValue = qualityIndex.find(x => x.index === current.air_quality["gb-defra-index"].toString())
-    indexBanding.insertAdjacentHTML("afterend", qualityValue.airPollutionBanding);
+    indexDescription.innerHTML = qualityValue.airPollutionBanding;
     indexBanding.style.background = qualityValue.colour;
 
     donutSegment.style.stroke = qualityValue.colour;
@@ -114,6 +115,7 @@ function getDocumentElements() {
 
     index = document.getElementById("index");
     indexBanding = document.getElementById("indexBanding");
+    indexDescription = document.getElementById("indexDescription");
     donutSegment = document.getElementById("donutSegment");
     message = document.getElementById("airQualityMessage");
 
