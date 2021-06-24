@@ -33,15 +33,14 @@ function displayTenDay() {
 async function searchCurrentWeather() {
     const searchTerm = document.getElementById("search-input").value;
     const result = await getCurrentWeather(searchTerm);
-    result.error ? document.getElementById("searchbar").insertAdjacentHTML("beforebegin", "<p class='error darkblue'>" + result.error.message + "</p>") : displayResult(result);
+    result.error ? document.getElementById("error").innerText = result.error.message : ( document.getElementById("error").innerText = "", displayResult(result));
 }
 
 async function getCurrentWeather(searchLocation) {
     const response = await fetch(basicURI + forecast + "?key=" + apiKey + "&q=" + (searchLocation ? searchLocation : "Edinburgh") + otherParameters)
         .catch(error => {
-            console.error(error);
-            const searchInput = document.getElementById("search-input");
-            searchInput.insertAdjacentHTML("beforebegin", " <p id='error'>City not found</p>");
+            const errorMessage = document.getElementById("error");
+            errorMessage.innerText = "City not found";
         });
     return await response.json();
 }
