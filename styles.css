@@ -5,6 +5,7 @@
     --midnightblue: #41729F;
     --bluegray: #5885AF;
     --babyblue: #C3E0E5;
+    --lightGray: #e7ecf1;
     --offwhite: #E8EEF1;
     --white: #FFFFFF;
     --black: #000000;
@@ -13,7 +14,9 @@
 
 body {
     font-family: 'Lato', sans-serif !important;
-    background-color: var(--babyblue);
+    background: rgb(88,133,175);
+    background: linear-gradient(180deg, rgba(88,133,175,1) -20%, rgba(195,224,229,1) 50%, rgba(232,238,241,1) 100%);
+    background-repeat: no-repeat;
 }
 
 .darkblue {
@@ -148,8 +151,83 @@ a:before {
     margin: 0;
 }
 
+/* donut chart */
+  
+  .chart-number {
+    font-size: 0.5em;
+    line-height: 1;
+    text-anchor: middle;
+    transform: translateY(0.25em);
+  }
+  
+  figure {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    margin-left: -15px;
+    margin-right: -15px;
+  }
+  
+  @media (min-width: 768px) {
+    figure {
+      flex-direction: row;
+    }
+  }
+  
+  .figure-content,
+  .figure-key {
+    flex: 1;
+    padding-left: 15px;
+    padding-right: 15px;
+    align-self: center;
+  }
+  
+  .figure-content svg {
+    max-height: 300px;
+  }
+  
+  .figure-key {
+    min-width: calc(8 / 12);
+  }
+  
+  .figure-key [class*="shape-"] {
+    margin-right: 6px;
+  }
+  
+  .figure-key-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  
+  .figure-key-list li {
+    margin: 0 0 8px;
+    padding: 0;
+  }
+  
+  .shape-circle {
+    display: inline-block;
+    vertical-align: middle;
+    width: 32px;
+    height: 32px;
+    -webkit-border-radius: 50%;
+       -moz-border-radius: 50%;
+            border-radius: 50%;
+  }
+  
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    border: 0;
+  }
+
 @media (max-width: 575.98px) { 
-    .current > .card, .details > .card {
+    .card {
         text-align: center;
     }
 }
