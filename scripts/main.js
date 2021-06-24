@@ -57,7 +57,7 @@ async function displayResult(result) {
     date.innerHTML = "Last updated " + moment(current.last_updated).format("h:mm A");
     temp.innerHTML = current.temp_c + '&deg;C';
     condition.innerHTML = current.condition.text;
-    Promise.resolve(findIcon(current.condition.code).then(data => icon.src = "assets/" + ( current.is_day ? data.day : data,night)));
+    Promise.resolve(findIcon(current.condition.code).then(data => icon.src = "assets/" + ( current.is_day ? data.day : data.night)));
 
     feelsLike.innerHTML = current.feelslike_c + '&deg;C';
 
